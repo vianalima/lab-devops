@@ -1,0 +1,74 @@
+pipeline {
+    agent none  // Não atribui um agente global
+
+    stages {
+        stage('Atualizar no lnsat-minio-d01') {
+            agent { label 'lnsat-minio-d01.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    echo 'Atualizando lnsat-minio-d01...'
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+                    // Reinicia o servidor (descomente se necessário)
+                    sh 'sudo reboot'
+                    echo 'Aguardando 30 segundos para reinicialização...'
+                    sleep 30
+                }
+            }
+        }
+
+        stage('Atualizar no lnsat-minio-d02') {
+            agent { label 'lnsat-minio-d02.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    echo 'Atualizando lnsat-minio-d02...'
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+                    // Reinicia o servidor (descomente se necessário)
+                    sh 'sudo reboot'
+                    echo 'Aguardando 30 segundos para reinicialização...'
+                    sleep 30
+                }
+            }
+        }
+
+        stage('Atualizar no lnsat-minio-d03') {
+            agent { label 'lnsat-minio-d03.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    echo 'Atualizando lnsat-minio-d03...'
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+                    // Reinicia o servidor (descomente se necessário)
+                    sh 'sudo reboot'
+                    echo 'Aguardando 30 segundos para reinicialização...'
+                    sleep 30
+                }
+            }
+        }
+
+        stage('Atualizar no lnsat-minio-d04') {
+            agent { label 'lnsat-minio-d04.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    echo 'Atualizando lnsat-minio-d04...'
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+                    // Reinicia o servidor (descomente se necessário)
+                    sh 'sudo reboot'
+                    echo 'Aguardando 30 segundos para reinicialização...'
+                    sleep 30
+                }
+            }
+        }
+    }
+}
+

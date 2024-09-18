@@ -1,0 +1,18 @@
+# Usar uma versão leve do Ubuntu como base
+FROM ubuntu:latest
+
+# Instalar o curl e o Java necessário para o agente do Jenkins
+RUN apt-get update && apt-get install -y \
+    curl \
+    sudo \
+    openjdk-11-jre-headless \
+    && rm -rf /var/lib/apt/lists/*
+
+# Criar o diretório para o Jenkins
+RUN mkdir /home/jenkins
+
+# Definir o diretório de trabalho (opcional)
+ WORKDIR /home/jenkins
+
+# Definir o comando para iniciar o agente Jenkins
+CMD ["java", "-jar", "agent.jar", "-url", "http://jenkins:8080", "-secret", "8d1a9e286662145f58bff0fd2b6fd792b2e0028293b5ebd28d382bfe2ecb8c56", "-name", "lnsat-minio-d04.sef.sc.gov.br", "-workDir", "/home/jenkins"]

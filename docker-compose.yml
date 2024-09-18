@@ -17,6 +17,7 @@ services:
       - devops_network
 
   nginx:
+<<<<<<< HEAD
     image: nginx:latest
     container_name: nginx
     ports:
@@ -25,20 +26,43 @@ services:
       - ./nginx:/etc/nginx/
     networks:
       - devops_network
+=======
+     image: nginx:latest
+     container_name: nginx
+     ports:
+       - "80:80"
+     volumes:
+       - ./nginx:/etc/nginx/conf.d/
+     networks:
+       - devops_network
+     depends_on:
+       - jenkins
+>>>>>>> d69af90 (Adicionando projeto)
 
   jenkins:
     image: jenkins/jenkins:lts
     container_name: jenkins
     ports:
       - "8080:8080"
+<<<<<<< HEAD
+=======
+      - "50000:50000"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+>>>>>>> d69af90 (Adicionando projeto)
     networks:
       - devops_network
 
   ansible:
     build: .
     container_name: ansible
+<<<<<<< HEAD
     volumes:
       - ./ansible:/app  # Substitua pelo caminho correto
+=======
+    #volumes:
+    #  - ./ansible:/app  # Substitua pelo caminho correto
+>>>>>>> d69af90 (Adicionando projeto)
     networks:
       - devops_network
 
@@ -52,8 +76,57 @@ services:
     volumes:
       - ./jenkins:/home/jenkins
     networks:
+<<<<<<< HEAD
       - devops_network    
+=======
+      - devops_network
+
+  ubuntu_lite2:
+    #image: ubuntu:latest  # Use uma versão leve do Ubuntu
+    build:
+      context: .
+      dockerfile: Dockerfile-ubuntu2
+    container_name: ubuntu_lite2
+    tty: true  # Mantém o contêiner ativo
+    volumes:
+      - ./jenkins:/home/jenkins
+    networks:
+      - devops_network
+
+  ubuntu_lite3:
+    #image: ubuntu:latest  # Use uma versão leve do Ubuntu
+    build:
+      context: .
+      dockerfile: Dockerfile-ubuntu3
+    container_name: ubuntu_lite3
+    tty: true  # Mantém o contêiner ativo
+    volumes:
+      - ./jenkins:/home/jenkins
+    networks:
+      - devops_network
+
+  ubuntu_lite4:
+    #image: ubuntu:latest  # Use uma versão leve do Ubuntu
+    build:
+      context: .
+      dockerfile: Dockerfile-ubuntu4
+    container_name: ubuntu_lite4
+    tty: true  # Mantém o contêiner ativo
+    volumes:
+      - ./jenkins:/home/jenkins
+    networks:
+      - devops_network
+>>>>>>> d69af90 (Adicionando projeto)
 
 networks:
   devops_network:
     driver: bridge
+<<<<<<< HEAD
+=======
+    # ipam:
+    #   config:
+    #     - subnet: 192.168.16.0/24  # Definindo o intervalo da sub-rede
+
+volumes:
+  jenkins_home:  # Define um volume persistente para o Jenkins
+>>>>>>> d69af90 (Adicionando projeto)

@@ -1,0 +1,166 @@
+pipeline {
+    agent none  // Não atribui um agente global
+
+    stages {
+        stage('Atualizar no lnsat-minio-d01') {
+            agent { label 'lnsat-minio-d01.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+
+                    // Reinicia o servidor
+                    sh 'sudo reboot'
+                }
+            }
+        }
+
+        stage('Aguardar no lnsat-minio-d01 voltar') {
+            agent { label 'lnsat-minio-d01.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Verifica se o servidor está online
+                    def serverUp = false
+                    def retries = 10  // Número de tentativas
+                    def waitTime = 30  // Tempo em segundos entre tentativas
+
+                    for (int i = 0; i < retries; i++) {
+                        sleep waitTime
+                        serverUp = sh(script: "ping -c 1 lnsat-minio-d01.sef.sc.gov.br", returnStatus: true) == 0
+                        if (serverUp) {
+                            break
+                        }
+                    }
+
+                    if (!serverUp) {
+                        error "O servidor lnsat-minio-d01 não voltou online após ${retries * waitTime} segundos."
+                    }
+                }
+            }
+        }
+
+        stage('Atualizar no lnsat-minio-d02') {
+            agent { label 'lnsat-minio-d02.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+
+                    // Reinicia o servidor
+                    sh 'sudo reboot'
+                }
+            }
+        }
+
+        stage('Aguardar no lnsat-minio-d02 voltar') {
+            agent { label 'lnsat-minio-d02.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Verifica se o servidor está online
+                    def serverUp = false
+                    def retries = 10  // Número de tentativas
+                    def waitTime = 30  // Tempo em segundos entre tentativas
+
+                    for (int i = 0; i < retries; i++) {
+                        sleep waitTime
+                        serverUp = sh(script: "ping -c 1 lnsat-minio-d02.sef.sc.gov.br", returnStatus: true) == 0
+                        if (serverUp) {
+                            break
+                        }
+                    }
+
+                    if (!serverUp) {
+                        error "O servidor lnsat-minio-d02 não voltou online após ${retries * waitTime} segundos."
+                    }
+                }
+            }
+        }
+
+        stage('Atualizar no lnsat-minio-d03') {
+            agent { label 'lnsat-minio-d03.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+
+                    // Reinicia o servidor
+                    sh 'sudo reboot'
+                }
+            }
+        }
+
+        stage('Aguardar no lnsat-minio-d03 voltar') {
+            agent { label 'lnsat-minio-d03.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Verifica se o servidor está online
+                    def serverUp = false
+                    def retries = 10  // Número de tentativas
+                    def waitTime = 30  // Tempo em segundos entre tentativas
+
+                    for (int i = 0; i < retries; i++) {
+                        sleep waitTime
+                        serverUp = sh(script: "ping -c 1 lnsat-minio-d03.sef.sc.gov.br", returnStatus: true) == 0
+                        if (serverUp) {
+                            break
+                        }
+                    }
+
+                    if (!serverUp) {
+                        error "O servidor lnsat-minio-d03 não voltou online após ${retries * waitTime} segundos."
+                    }
+                }
+            }
+        }
+
+        stage('Atualizar no lnsat-minio-d04') {
+            agent { label 'lnsat-minio-d04.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Atualiza a lista de pacotes
+                    sh 'sudo apt update'
+
+                    // Atualiza os pacotes
+                    sh 'sudo apt upgrade -y'
+
+                    // Reinicia o servidor
+                    sh 'sudo reboot'
+                }
+            }
+        }
+
+        stage('Aguardar no lnsat-minio-d04 voltar') {
+            agent { label 'lnsat-minio-d04.sef.sc.gov.br' }  // Define o agente para este estágio
+            steps {
+                script {
+                    // Verifica se o servidor está online
+                    def serverUp = false
+                    def retries = 10  // Número de tentativas
+                    def waitTime = 30  // Tempo em segundos entre tentativas
+
+                    for (int i = 0; i < retries; i++) {
+                        sleep waitTime
+                        serverUp = sh(script: "ping -c 1 lnsat-minio-d04.sef.sc.gov.br", returnStatus: true) == 0
+                        if (serverUp) {
+                            break
+                        }
+                    }
+
+                    if (!serverUp) {
+                        error "O servidor lnsat-minio-d04 não voltou online após ${retries * waitTime} segundos."
+                    }
+                }
+            }
+        }
+    }
+}
+

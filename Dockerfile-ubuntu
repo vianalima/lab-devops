@@ -13,6 +13,13 @@ RUN mkdir /home/jenkins
 
 # Definir o diretório de trabalho (opcional)
  WORKDIR /home/jenkins
+<<<<<<< HEAD
 
 # Definir o comando para iniciar o agente Jenkins
 CMD ["java", "-jar", "agent.jar", "-url", "http://jenkins:8080/", "-secret", "f6e05efa3996ce414e040557f1e8e567da9fe73a09e6cdd2a4cfabf22f4001bb", "-name", "Docker-ubuntu", "-workDir", "/home/jenkins"]
+=======
+ 
+
+# Definir o comando para iniciar o agente Jenkins
+CMD ["java", "-jar", "agent.jar", "-url", "http://jenkins:8080", "-secret", "a9c50965b61d186d2d7de7071808b89c9e4995fd7c3573052a7a0eb4b0980697", "-name", "lnsat-minio-d01.sef.sc.gov.br", "-workDir", "/home/jenkins"]
+>>>>>>> d69af90 (Adicionando projeto)

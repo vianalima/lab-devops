@@ -1,0 +1,30 @@
+---
+- name: Exemplo básico de Playbook Ansible
+  hosts: localhost
+  become: yes  # Executa os comandos como sudo
+  tasks:
+    - name: Atualizar pacotes no sistema
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Instalar Nginx
+      apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Iniciar o serviço Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Verificar status do Nginx
+      command: systemctl status nginx
+      register: nginx_status
+
+    - name: Exibir o status do Nginx
+      debug:
+        var: nginx_status.stdout
