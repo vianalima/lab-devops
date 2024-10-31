@@ -1,0 +1,18 @@
+Inbound agent connected from ubuntu_lite.lab-devops_devops_network/172.19.0.2:35404
+Remoting version: 3261.v9c670a_4748a_9
+Launcher: JNLPLauncher
+Communication Protocol: JNLP4-connect
+This is a Unix agent
+NOTE: Relative remote path resolved to: /home/jenkins
+Agent successfully connected and online
+ERROR: Connection terminated
+java.nio.channels.ClosedChannelException
+	at org.jenkinsci.remoting.protocol.NetworkLayer.onRecvClosed(NetworkLayer.java:155)
+	at org.jenkinsci.remoting.protocol.impl.NIONetworkLayer.ready(NIONetworkLayer.java:143)
+	at org.jenkinsci.remoting.protocol.IOHub$OnReady.run(IOHub.java:804)
+	at jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)
+	at jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:68)
+	at jenkins.util.ErrorLoggingExecutorService.lambda$wrap$0(ErrorLoggingExecutorService.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)

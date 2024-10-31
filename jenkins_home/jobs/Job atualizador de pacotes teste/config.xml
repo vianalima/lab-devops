@@ -1,0 +1,112 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1447.v559b_c710cd2e">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2214.vb_b_34b_2ea_9b_83"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2214.vb_b_34b_2ea_9b_83">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description>Atualizar pacotes</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@3990.vd281dd77a_388">
+    <script>pipeline {
+    agent { label &apos;ubuntu&apos; } // Executa o pipeline em um agente com o label &apos;ubuntu&apos;
+
+    stages {
+        stage(&apos;Instalar Dependências&apos;) {
+            steps {
+                script {
+                    echo &quot;Instalando o lsb-release...&quot;
+                    sh &apos;sudo apt update&apos;
+                    sh &apos;sudo apt install -y lsb-release&apos;
+                }
+            }
+        }
+
+        stage(&apos;Verificar Sistema&apos;) {
+            steps {
+                script {
+                    try {
+                        // Verifica se o sistema é Ubuntu
+                        def osName = sh(script: &apos;lsb_release -si 2&gt;/dev/null&apos;, returnStdout: true).trim()
+                        if (osName != &quot;Ubuntu&quot;) {
+                            error &quot;Este script só deve ser executado em sistemas Ubuntu.&quot;
+                        }
+                    } catch (Exception e) {
+                        error &quot;Erro ao verificar o sistema: ${e.message}&quot;
+                    }
+                }
+            }
+        }
+
+        stage(&apos;Mostrar Versão do Ubuntu&apos;) {
+            steps {
+                script {
+                    // Mostra a versão do Ubuntu
+                    def ubuntuVersion = sh(script: &apos;lsb_release -rs&apos;, returnStdout: true).trim()
+                    echo &quot;A versão do Ubuntu é: ${ubuntuVersion}&quot;
+                }
+            }
+        }
+
+        stage(&apos;Atualizar sources.list&apos;) {
+            steps {
+                script {
+                    echo &quot;Atualizando o sources.list e os pacotes...&quot;
+
+                    // Faz um backup do sources.list
+                    sh &apos;&apos;&apos;
+                        sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup &amp;&amp; 
+                        echo &quot;Backup do sources.list realizado com sucesso.&quot;
+                    &apos;&apos;&apos;
+
+                    // Atualiza o sources.list
+                    sh &apos;&apos;&apos;
+                    sudo tee /etc/apt/sources.list &gt; /dev/null &lt;&lt; EOF
+# Veja http://help.ubuntu.com/community/UpgradeNotes para como atualizar para
+# versões mais novas da distribuição.
+
+#SEF: Alterado para mirror interno
+#deb [trusted=yes] http://lnsat-apt.sef.sc.gov.br/lab/mirror/archive.ubuntu.com/ubuntu jammy main
+#deb [trusted=yes] http://lnsat-apt.sef.sc.gov.br/lab/mirror/archive.ubuntu.com/ubuntu jammy-updates main
+#deb [trusted=yes] http://lnsat-apt.sef.sc.gov.br/lab/mirror/archive.ubuntu.com/ubuntu jammy-security main
+
+# Repositórios padrão
+deb http://br.archive.ubuntu.com/ubuntu jammy main restricted
+deb-src http://br.archive.ubuntu.com/ubuntu jammy main restricted
+deb http://br.archive.ubuntu.com/ubuntu jammy-updates main restricted
+deb-src http://br.archive.ubuntu.com/ubuntu jammy-updates main restricted
+deb http://br.archive.ubuntu.com/ubuntu jammy universe
+deb-src http://br.archive.ubuntu.com/ubuntu jammy universe
+deb http://br.archive.ubuntu.com/ubuntu jammy multiverse
+deb-src http://br.archive.ubuntu.com/ubuntu jammy multiverse
+EOF
+                    &apos;&apos;&apos;
+                    
+                    // Verifica se o sources.list foi atualizado
+                    sh &apos;sudo cat /etc/apt/sources.list&apos;
+                }
+            }
+        }
+
+        stage(&apos;Atualizar Pacotes&apos;) {
+            steps {
+                script {
+                    // Atualiza a lista de pacotes e instala atualizações
+                    sh &apos;sudo apt update&apos;
+                    sh &apos;sudo apt upgrade -y&apos;
+                }
+            }
+        }
+    }
+}
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

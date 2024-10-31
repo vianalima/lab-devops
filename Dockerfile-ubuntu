@@ -1,18 +1,27 @@
 # Usar uma versão leve do Ubuntu como base
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 # Instalar o curl e o Java necessário para o agente do Jenkins
 RUN apt-get update && apt-get install -y \
     curl \
     sudo \
-    openjdk-11-jre-headless \
+    openjdk-17-jre-headless \
     && rm -rf /var/lib/apt/lists/*
 
 # Criar o diretório para o Jenkins
 RUN mkdir /home/jenkins
 
-# Definir o diretório de trabalho (opcional)
- WORKDIR /home/jenkins
+# Adicionar um usuário não-root
+#RUN useradd -m jenkins
+#USER jenkins
+
+# Definir o diretório de trabalho
+WORKDIR /home/jenkins
+
+# Definir variáveis de ambiente
+#ENV JENKINS_URL=http://jenkins:8080/
+#ENV JENKINS_SECRET=c7aeeee9d10e457a35c87ed55a67b6911a8283c97bd33b0ec65e7684185fb5cc
+#ENV AGENT_NAME=HOME
 
 # Definir o comando para iniciar o agente Jenkins
-CMD ["java", "-jar", "agent.jar", "-url", "http://jenkins:8080/", "-secret", "f6e05efa3996ce414e040557f1e8e567da9fe73a09e6cdd2a4cfabf22f4001bb", "-name", "Docker-ubuntu", "-workDir", "/home/jenkins"]
+CMD ["java", "-jar", "agent.jar", "-url", "http://jenkins:8080/", "-secret", "c7aeeee9d10e457a35c87ed55a67b6911a8283c97bd33b0ec65e7684185fb5cc", "-name", "HOME", "-workDir", "/home/jenkins"]

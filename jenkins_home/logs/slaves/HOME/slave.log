@@ -1,0 +1,7 @@
+Inbound agent connected from ubuntu_lite.lab-devops_devops_network/172.19.0.2:40458
+Remoting version: 3261.v9c670a_4748a_9
+Launcher: JNLPLauncher
+Communication Protocol: JNLP4-connect
+This is a Unix agent
+NOTE: Relative remote path resolved to: /home/jenkins
+Agent successfully connected and online

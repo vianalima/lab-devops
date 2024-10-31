@@ -1,0 +1,386 @@
+Oct 31, 2024 8:14:33 PM hudson.remoting.Launcher createEngine
+INFO: Setting up agent: HOME
+Oct 31, 2024 8:14:33 PM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 3261.v9c670a_4748a_9
+Oct 31, 2024 8:14:33 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jenkins/remoting as a remoting work directory
+Oct 31, 2024 8:14:33 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://jenkins:8080/]
+Oct 31, 2024 8:14:33 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Oct 31, 2024 8:14:33 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: jenkins
+  Agent port:    50000
+  Identity:      4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:14:33 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+Oct 31, 2024 8:14:33 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to jenkins:50000
+Oct 31, 2024 8:14:33 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+Oct 31, 2024 8:14:33 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Oct 31, 2024 8:14:34 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Oct 31, 2024 8:14:34 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:14:34 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connected
+Oct 31, 2024 8:14:34 PM hudson.remoting.UserRequest perform
+WARNING: LinkageError while performing UserRequest:hudson.slaves.SlaveComputer$SlaveVersion@37232c4c
+java.lang.UnsupportedClassVersionError: Failed to load hudson.slaves.SlaveComputer$SlaveVersion
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:472)
+	at hudson.remoting.RemoteClassLoader.loadRemoteClass(RemoteClassLoader.java:301)
+	at hudson.remoting.RemoteClassLoader.loadWithMultiClassLoader(RemoteClassLoader.java:277)
+	at hudson.remoting.RemoteClassLoader.findClass(RemoteClassLoader.java:236)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at hudson.remoting.MultiClassLoaderSerializer$Input.resolveClass(MultiClassLoaderSerializer.java:133)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2003)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1870)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2201)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1687)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:489)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:447)
+	at hudson.remoting.UserRequest.deserialize(UserRequest.java:312)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:196)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:50)
+	at hudson.remoting.Request$2.run(Request.java:391)
+	at hudson.remoting.InterceptingExecutorService.lambda$wrap$0(InterceptingExecutorService.java:81)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:140)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsupportedClassVersionError: hudson/slaves/SlaveComputer$SlaveVersion has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:883)
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:470)
+	... 24 more
+
+Oct 31, 2024 8:14:34 PM hudson.remoting.Launcher$CuiListener status
+INFO: Terminated
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Performing onReconnect operation.
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: onReconnect operation completed.
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://jenkins:8080/]
+Oct 31, 2024 8:14:44 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: jenkins
+  Agent port:    50000
+  Identity:      4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to jenkins:50000
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Oct 31, 2024 8:14:44 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connected
+Oct 31, 2024 8:14:44 PM hudson.remoting.UserRequest perform
+WARNING: LinkageError while performing UserRequest:hudson.slaves.SlaveComputer$SlaveVersion@4dce7901
+java.lang.UnsupportedClassVersionError: Failed to load hudson.slaves.SlaveComputer$SlaveVersion
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:472)
+	at hudson.remoting.RemoteClassLoader.loadRemoteClass(RemoteClassLoader.java:301)
+	at hudson.remoting.RemoteClassLoader.loadWithMultiClassLoader(RemoteClassLoader.java:277)
+	at hudson.remoting.RemoteClassLoader.findClass(RemoteClassLoader.java:236)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at hudson.remoting.MultiClassLoaderSerializer$Input.resolveClass(MultiClassLoaderSerializer.java:133)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2003)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1870)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2201)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1687)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:489)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:447)
+	at hudson.remoting.UserRequest.deserialize(UserRequest.java:312)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:196)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:50)
+	at hudson.remoting.Request$2.run(Request.java:391)
+	at hudson.remoting.InterceptingExecutorService.lambda$wrap$0(InterceptingExecutorService.java:81)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:140)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsupportedClassVersionError: hudson/slaves/SlaveComputer$SlaveVersion has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:883)
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:470)
+	... 24 more
+
+Oct 31, 2024 8:14:44 PM hudson.remoting.Launcher$CuiListener status
+INFO: Terminated
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Performing onReconnect operation.
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: onReconnect operation completed.
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://jenkins:8080/]
+Oct 31, 2024 8:14:54 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: jenkins
+  Agent port:    50000
+  Identity:      4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to jenkins:50000
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Oct 31, 2024 8:14:54 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connected
+Oct 31, 2024 8:14:54 PM hudson.remoting.UserRequest perform
+WARNING: LinkageError while performing UserRequest:hudson.slaves.SlaveComputer$SlaveVersion@5f56a9a
+java.lang.UnsupportedClassVersionError: Failed to load hudson.slaves.SlaveComputer$SlaveVersion
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:472)
+	at hudson.remoting.RemoteClassLoader.loadRemoteClass(RemoteClassLoader.java:301)
+	at hudson.remoting.RemoteClassLoader.loadWithMultiClassLoader(RemoteClassLoader.java:277)
+	at hudson.remoting.RemoteClassLoader.findClass(RemoteClassLoader.java:236)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at hudson.remoting.MultiClassLoaderSerializer$Input.resolveClass(MultiClassLoaderSerializer.java:133)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2003)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1870)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2201)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1687)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:489)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:447)
+	at hudson.remoting.UserRequest.deserialize(UserRequest.java:312)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:196)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:50)
+	at hudson.remoting.Request$2.run(Request.java:391)
+	at hudson.remoting.InterceptingExecutorService.lambda$wrap$0(InterceptingExecutorService.java:81)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:140)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsupportedClassVersionError: hudson/slaves/SlaveComputer$SlaveVersion has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:883)
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:470)
+	... 24 more
+
+Oct 31, 2024 8:14:54 PM hudson.remoting.Launcher$CuiListener status
+INFO: Terminated
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Performing onReconnect operation.
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: onReconnect operation completed.
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://jenkins:8080/]
+Oct 31, 2024 8:15:04 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: jenkins
+  Agent port:    50000
+  Identity:      4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to jenkins:50000
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Oct 31, 2024 8:15:04 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connected
+Oct 31, 2024 8:15:04 PM hudson.remoting.UserRequest perform
+WARNING: LinkageError while performing UserRequest:hudson.slaves.SlaveComputer$SlaveVersion@90f7440
+java.lang.UnsupportedClassVersionError: Failed to load hudson.slaves.SlaveComputer$SlaveVersion
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:472)
+	at hudson.remoting.RemoteClassLoader.loadRemoteClass(RemoteClassLoader.java:301)
+	at hudson.remoting.RemoteClassLoader.loadWithMultiClassLoader(RemoteClassLoader.java:277)
+	at hudson.remoting.RemoteClassLoader.findClass(RemoteClassLoader.java:236)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at hudson.remoting.MultiClassLoaderSerializer$Input.resolveClass(MultiClassLoaderSerializer.java:133)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2003)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1870)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2201)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1687)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:489)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:447)
+	at hudson.remoting.UserRequest.deserialize(UserRequest.java:312)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:196)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:50)
+	at hudson.remoting.Request$2.run(Request.java:391)
+	at hudson.remoting.InterceptingExecutorService.lambda$wrap$0(InterceptingExecutorService.java:81)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:140)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsupportedClassVersionError: hudson/slaves/SlaveComputer$SlaveVersion has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:883)
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:470)
+	... 24 more
+
+Oct 31, 2024 8:15:04 PM hudson.remoting.Launcher$CuiListener status
+INFO: Terminated
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Performing onReconnect operation.
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: onReconnect operation completed.
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://jenkins:8080/]
+Oct 31, 2024 8:15:14 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: jenkins
+  Agent port:    50000
+  Identity:      4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to jenkins:50000
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Oct 31, 2024 8:15:14 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connected
+Oct 31, 2024 8:15:14 PM hudson.remoting.UserRequest perform
+WARNING: LinkageError while performing UserRequest:hudson.slaves.SlaveComputer$SlaveVersion@78a99857
+java.lang.UnsupportedClassVersionError: Failed to load hudson.slaves.SlaveComputer$SlaveVersion
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:472)
+	at hudson.remoting.RemoteClassLoader.loadRemoteClass(RemoteClassLoader.java:301)
+	at hudson.remoting.RemoteClassLoader.loadWithMultiClassLoader(RemoteClassLoader.java:277)
+	at hudson.remoting.RemoteClassLoader.findClass(RemoteClassLoader.java:236)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at hudson.remoting.MultiClassLoaderSerializer$Input.resolveClass(MultiClassLoaderSerializer.java:133)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2003)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1870)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2201)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1687)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:489)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:447)
+	at hudson.remoting.UserRequest.deserialize(UserRequest.java:312)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:196)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:50)
+	at hudson.remoting.Request$2.run(Request.java:391)
+	at hudson.remoting.InterceptingExecutorService.lambda$wrap$0(InterceptingExecutorService.java:81)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:140)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsupportedClassVersionError: hudson/slaves/SlaveComputer$SlaveVersion has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:883)
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:470)
+	... 24 more
+
+Oct 31, 2024 8:15:14 PM hudson.remoting.Launcher$CuiListener status
+INFO: Terminated
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Performing onReconnect operation.
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: onReconnect operation completed.
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://jenkins:8080/]
+Oct 31, 2024 8:15:24 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: jenkins
+  Agent port:    50000
+  Identity:      4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to jenkins:50000
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Oct 31, 2024 8:15:24 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 4f:f1:95:6f:dd:2a:0e:92:be:2f:e6:3d:6b:f3:23:44
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connected
+Oct 31, 2024 8:15:24 PM hudson.remoting.UserRequest perform
+WARNING: LinkageError while performing UserRequest:hudson.slaves.SlaveComputer$SlaveVersion@480bedd1
+java.lang.UnsupportedClassVersionError: Failed to load hudson.slaves.SlaveComputer$SlaveVersion
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:472)
+	at hudson.remoting.RemoteClassLoader.loadRemoteClass(RemoteClassLoader.java:301)
+	at hudson.remoting.RemoteClassLoader.loadWithMultiClassLoader(RemoteClassLoader.java:277)
+	at hudson.remoting.RemoteClassLoader.findClass(RemoteClassLoader.java:236)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at hudson.remoting.MultiClassLoaderSerializer$Input.resolveClass(MultiClassLoaderSerializer.java:133)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2003)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1870)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2201)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1687)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:489)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:447)
+	at hudson.remoting.UserRequest.deserialize(UserRequest.java:312)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:196)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:50)
+	at hudson.remoting.Request$2.run(Request.java:391)
+	at hudson.remoting.InterceptingExecutorService.lambda$wrap$0(InterceptingExecutorService.java:81)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:140)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsupportedClassVersionError: hudson/slaves/SlaveComputer$SlaveVersion has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:883)
+	at hudson.remoting.RemoteClassLoader.loadClassFile(RemoteClassLoader.java:470)
+	... 24 more
+
+Oct 31, 2024 8:15:24 PM hudson.remoting.Launcher$CuiListener status
+INFO: Terminated
